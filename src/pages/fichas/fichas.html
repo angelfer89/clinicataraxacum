@@ -1,10 +1,10 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Pacientes</ion-title>
+    <ion-title>Fichas</ion-title>
     
     <ion-buttons end>
-      <button ion-button [navPush]="paginaAgregarPaciente">
+      <button ion-button [navPush]="paginaAgregarFicha">
         Agregar
       </button>
     </ion-buttons>
@@ -14,20 +14,19 @@
 
 
 <ion-content>
+  Angel Salgado
+  
   <ion-list>
     
   <ion-item-sliding>
     <ion-item>
-      <ion-avatar item-start>
-        <img src="../../assets/logo.png">
-      </ion-avatar>
-      <h2>Angel Fernando Salgado Ponce</h2>
+      <h2>Dolor de espalda</h2>
     </ion-item>
     <ion-item-options side="right">
-      <button ion-button color="primary" [navPush]="paginaFichas">
+      <button ion-button color="primary" [navPush]="paginaSesiones">
         <ion-icon name="md-document"></ion-icon>
       </button>
-      <button ion-button color="secondary" [navPush]="paginaVerPaciente">
+      <button ion-button color="secondary" [navPush]="paginaVerFicha">
         <ion-icon name="md-eye"></ion-icon>
       </button>
     </ion-item-options>
@@ -35,16 +34,13 @@
   
   <ion-item-sliding>
     <ion-item>
-      <ion-avatar item-start>
-        <img src="../../assets/logo.png">
-      </ion-avatar>
-      <h2>Ana Lilia Torres Garduño</h2>
+      <h2>Rodilla lastimada</h2>
     </ion-item>
     <ion-item-options side="right">
-      <button ion-button color="primary" [navPush]="paginaFichas">
+      <button ion-button color="primary" [navPush]="paginaSesiones">
         <ion-icon name="md-document"></ion-icon>
       </button>
-      <button ion-button color="secondary" [navPush]="paginaVerPaciente">
+      <button ion-button color="secondary" [navPush]="paginaSesiones">
         <ion-icon name="md-eye"></ion-icon>
       </button>
     </ion-item-options>

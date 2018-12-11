@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-import { AgregarPacientePage, VerPacientePage } from "../index.paginas";
+import { AgregarPacientePage, VerPacientePage, FichasPage } from "../index.paginas";
 
 @Component({
   selector: 'page-pacientes',
@@ -11,6 +11,7 @@ export class PacientesPage {
 
   paginaAgregarPaciente:any = AgregarPacientePage;
   paginaVerPaciente:any = VerPacientePage;
+  paginaFichas:any = FichasPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

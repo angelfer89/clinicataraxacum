@@ -1,0 +1,23 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>AgregarFicha</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form (ngSubmit)="logForm()">
+      <ion-item>
+        <ion-label floating>Nombre de la ficha</ion-label>
+        <ion-input type="text" [(ngModel)]="ficha.nombre" name="nombre"></ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Sintomas</ion-label>
+        <ion-input type="text" [(ngModel)]="ficha.sintomas" name="sintomas"></ion-input>
+      </ion-item>
+      <button ion-button type="submit" block>Agregar</button>
+    </form>
+</ion-content>

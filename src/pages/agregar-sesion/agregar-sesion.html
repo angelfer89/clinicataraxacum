@@ -1,0 +1,18 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Agregar Sesion</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form (ngSubmit)="logForm()">
+      <ion-item>
+         <ion-label floating>Observaciones</ion-label>
+        <ion-input type="text" [(ngModel)]="sesion.observaciones" name="observaciones"></ion-input>
+      </ion-item>
+      <button ion-button type="submit" block>Agregar</button>
+    </form>
+</ion-content>

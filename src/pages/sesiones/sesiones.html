@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Sesiones</ion-title>
+    
+    <ion-buttons end>
+      <button ion-button [navPush]="paginaAgregarSesion">
+        Agregar
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  
+  <ion-list>
+  <button ion-item [navPush]="paginaVerSesion">
+    Sesion 1
+  </button>  
+  <button ion-item [navPush]="paginaVerSesion">
+    Sesion 2
+  </button>  
+</ion-list>
+
+</ion-content>

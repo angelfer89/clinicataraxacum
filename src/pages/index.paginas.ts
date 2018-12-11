@@ -1,3 +1,9 @@
 export { PacientesPage } from "./pacientes/pacientes";
 export { AgregarPacientePage } from "./agregar-paciente/agregar-paciente";
 export { VerPacientePage } from "./ver-paciente/ver-paciente";
+export { FichasPage } from "./fichas/fichas";
+export { AgregarFichaPage } from "./agregar-ficha/agregar-ficha";
+export { VerFichaPage } from "./ver-ficha/ver-ficha";
+export { SesionesPage } from "./sesiones/sesiones";
+export { AgregarSesionPage } from "./agregar-sesion/agregar-sesion";
+export { VerSesionPage } from "./ver-sesion/ver-sesion";

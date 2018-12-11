@@ -7,14 +7,17 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 
 // Import Pages
-import { PacientesPage, AgregarPacientePage, VerPacientePage } from '../pages/index.paginas';
+import { PacientesPage, AgregarPacientePage, VerPacientePage,
+         FichasPage, AgregarFichaPage, VerFichaPage,
+         SesionesPage, AgregarSesionPage, VerSesionPage
+       } from '../pages/index.paginas';
 
 @NgModule({
   declarations: [
     MyApp,
-    PacientesPage, 
-    AgregarPacientePage,
-    VerPacientePage
+    PacientesPage,  AgregarPacientePage,  VerPacientePage,
+    FichasPage,  AgregarFichaPage,  VerFichaPage,
+    SesionesPage,  AgregarSesionPage,  VerSesionPage
   ],
   imports: [
     BrowserModule,
@@ -23,9 +26,9 @@ import { PacientesPage, AgregarPacientePage, VerPacientePage } from '../pages/in
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    PacientesPage,
-    AgregarPacientePage,
-    VerPacientePage
+    PacientesPage, AgregarPacientePage, VerPacientePage,
+    FichasPage, AgregarFichaPage, VerFichaPage,
+    SesionesPage, AgregarSesionPage, VerSesionPage
   ],
   providers: [
     StatusBar,
