@@ -8,10 +8,30 @@
 
 
 <ion-content padding>
-  <form (ngSubmit)="logForm()">
+  <form (ngSubmit)="AgregarSesion()">
       <ion-item>
-         <ion-label floating>Observaciones</ion-label>
-        <ion-input type="text" [(ngModel)]="sesion.observaciones" name="observaciones"></ion-input>
+        <ion-label floating>Fecha de la sesión</ion-label>
+        <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="sesion.fechaActual" name="fechaActual"></ion-datetime>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Sesión</ion-label>
+        <ion-input type="text" [(ngModel)]="sesion.sesion" name="sesion"></ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Sugerencias</ion-label>
+        <ion-input type="text" [(ngModel)]="sesion.sugerencias" name="sugerencias"></ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Tratamiento</ion-label>
+        <ion-input type="text" [(ngModel)]="sesion.tratamiento" name="tratamiento"></ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Datos de importancia</ion-label>
+        <ion-input type="text" [(ngModel)]="sesion.datosImportancia" name="datosImportancia"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Fecha de la sesión siguiente</ion-label>
+        <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="sesion.fechaSiguiente" name="fechaSiguiente"></ion-datetime>
       </ion-item>
       <button ion-button type="submit" block>Agregar</button>
     </form>

@@ -9,15 +9,59 @@
 
 
 <ion-content padding>
-  <form (ngSubmit)="logForm()">
+  <form [formGroup]="fichaForm" (ngSubmit)="AgregarFicha()">
       <ion-item>
-        <ion-label floating>Nombre de la ficha</ion-label>
-        <ion-input type="text" [(ngModel)]="ficha.nombre" name="nombre"></ion-input>
+        <ion-label floating>Motivo principal</ion-label>
+        <ion-input type="text" [(ngModel)]="ficha.motivoPrincipal" formControlName="motivoPrincipal"></ion-input>
       </ion-item>
       <ion-item>
-         <ion-label floating>Sintomas</ion-label>
-        <ion-input type="text" [(ngModel)]="ficha.sintomas" name="sintomas"></ion-input>
+         <ion-label floating>¿Desde cuando la presenta?</ion-label>
+        <ion-input type="text" [(ngModel)]="ficha.desdeCuando" formControlName="desdeCuando"></ion-input>
       </ion-item>
-      <button ion-button type="submit" block>Agregar</button>
+      <ion-item>
+         <ion-label floating>¿A qué lo atribuye?</ion-label>
+        <ion-input type="text" [(ngModel)]="ficha.atribuyeA" formControlName="atribuyeA"></ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Indicar síntomas físicos</ion-label>
+        <ion-input type="text" [(ngModel)]="ficha.sintomasFisicos" formControlName="sintomasFisicos"></ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Indicar síntomas mentales</ion-label>
+        <ion-input type="text" [(ngModel)]="ficha.sintomasMentales" formControlName="sintomasMentales"></ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Indicar si hay patologías asociadas al problema actual y cuales</ion-label>
+        <ion-input type="text" [(ngModel)]="ficha.patologiasAsociadas" formControlName="patologiasAsociadas"></ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Indicar intervenciones quirúrgicas</ion-label>
+        <ion-input type="text" [(ngModel)]="ficha.intervencionesQuirurgicas" formControlName="intervencionesQuirurgicas"></ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Mencionar el tratamiento convencional que está recibiendo</ion-label>
+        <ion-input type="text" [(ngModel)]="ficha.tratamientoConvencional" formControlName="tratamientoConvencional"></ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Mencionar si está recibiendo algún tratamiento natural o alternativo</ion-label>
+        <ion-input type="text" [(ngModel)]="ficha.tratamientoAlternativo" formControlName="tratamientoAlternativo"></ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Alergias. Consumo de tóxicos (tabaco, alcohol...)</ion-label>
+        <ion-input type="text" [(ngModel)]="ficha.alergiasConsumos" formControlName="alergiasConsumos"></ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Antecedentes de la familia relacionadas con el motivo principal</ion-label>
+        <ion-input type="text" [(ngModel)]="ficha.antecedentesFamiliaresRelacionados" formControlName="antecedentesFamiliaresRelacionados"></ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Otros antecedemtes familiares de salud que considere importantes </ion-label>
+        <ion-input type="text" [(ngModel)]="ficha.antecedentesFamiliaresSalud" formControlName="antecedentesFamiliaresSalud"></ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Otros de importancia (sueños...)</ion-label>
+        <ion-input type="text" [(ngModel)]="ficha.anteceentesFamiliaresOtros" formControlName="anteceentesFamiliaresOtros"></ion-input>
+      </ion-item>
+      <button ion-button type="submit" block [disabled]="!fichaForm.valid">Agregar</button>
     </form>
 </ion-content>

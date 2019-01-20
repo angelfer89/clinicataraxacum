@@ -9,16 +9,40 @@
 
 <ion-content padding>
   
-  <form (ngSubmit)="logForm()">
+  <form [formGroup]="pacienteForm" (ngSubmit)="AgregarPaciente()">
       <ion-item>
         <ion-label floating>Nombre completo</ion-label>
-        <ion-input type="text" [(ngModel)]="paciente.nombre" name="nombre"></ion-input>
+        <ion-input type="text" [(ngModel)]="paciente.nombre" formControlName="nombre"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label floating>Fecha de nacimiento</ion-label>
-        <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="paciente.fechaNacimiento" name="fechaNacimieno"></ion-datetime>
+        <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="paciente.fechaNacimiento" formControlName="fechaNacimiento"></ion-datetime>
       </ion-item>
-      <button ion-button type="submit" block>Agregar</button>
+      <ion-item>
+        <ion-label floating>Lugar de nacimiento</ion-label>
+        <ion-input type="text" [(ngModel)]="paciente.lugarNacimiento" formControlName="lugarNacimiento"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Edad</ion-label>
+        <ion-input type="number" [(ngModel)]="paciente.edad" formControlName="edad"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Celular</ion-label>
+        <ion-input type="number" [(ngModel)]="paciente.celular" formControlName="celular"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Correo</ion-label>
+        <ion-input type="email" [(ngModel)]="paciente.correo" formControlName="correo"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Profesión</ion-label>
+        <ion-input type="text" [(ngModel)]="paciente.profesion" formControlName="profesion"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Trabajo actual</ion-label>
+        <ion-input type="text" [(ngModel)]="paciente.trabajoActual" formControlName="trabajoActual"></ion-input>
+      </ion-item>
+      <button ion-button type="submit" block [disabled]="!pacienteForm.valid">Agregar</button>
     </form>
 
 </ion-content>

@@ -1,10 +1,11 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Sesiones</ion-title>
+    <ion-title>Sesiones de {{ fichaMotivo }}</ion-title>
     
     <ion-buttons end>
-      <button ion-button [navPush]="paginaAgregarSesion">
+      <button ion-button [navPush]="paginaAgregarSesion" 
+        [navParams]="{ 'pacienteClave': pacienteClave, 'fichaClave': fichaClave}">
         Agregar
       </button>
     </ion-buttons>
@@ -16,12 +17,18 @@
 <ion-content padding>
   
   <ion-list>
-  <button ion-item [navPush]="paginaVerSesion">
-    Sesion 1
-  </button>  
-  <button ion-item [navPush]="paginaVerSesion">
-    Sesion 2
-  </button>  
-</ion-list>
+    <ion-item-sliding  *ngFor="let sesion of sesiones | async">
+      <ion-item>
+        <h2>{{ sesion.fechaActual }}</h2>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="secondary" 
+          [navPush]="paginaVerSesion"
+          [navParams]="{ 'pacienteClave': pacienteClave, 'fichaClave': fichaClave, 'sesion': sesion }">
+          <ion-icon name="md-eye"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 
 </ion-content>

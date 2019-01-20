@@ -11,6 +11,11 @@ import { PacientesPage, AgregarPacientePage, VerPacientePage,
          FichasPage, AgregarFichaPage, VerFichaPage,
          SesionesPage, AgregarSesionPage, VerSesionPage
        } from '../pages/index.paginas';
+       
+// Firebase
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { firebaseConfig } from '../config/firebase.config';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,9 @@ import { PacientesPage, AgregarPacientePage, VerPacientePage,
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

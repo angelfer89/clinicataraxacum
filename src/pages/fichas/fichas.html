@@ -1,10 +1,10 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Fichas</ion-title>
+    <ion-title>Fichas de {{ pacienteNombre }} </ion-title>
     
     <ion-buttons end>
-      <button ion-button [navPush]="paginaAgregarFicha">
+      <button ion-button [navPush]="paginaAgregarFicha" [navParams]="{ 'pacienteClave': pacienteClave }">
         Agregar
       </button>
     </ion-buttons>
@@ -13,39 +13,26 @@
 </ion-header>
 
 
-<ion-content>
-  Angel Salgado
+<ion-content padding>
   
   <ion-list>
-    
-  <ion-item-sliding>
-    <ion-item>
-      <h2>Dolor de espalda</h2>
-    </ion-item>
-    <ion-item-options side="right">
-      <button ion-button color="primary" [navPush]="paginaSesiones">
-        <ion-icon name="md-document"></ion-icon>
-      </button>
-      <button ion-button color="secondary" [navPush]="paginaVerFicha">
-        <ion-icon name="md-eye"></ion-icon>
-      </button>
-    </ion-item-options>
-  </ion-item-sliding>
-  
-  <ion-item-sliding>
-    <ion-item>
-      <h2>Rodilla lastimada</h2>
-    </ion-item>
-    <ion-item-options side="right">
-      <button ion-button color="primary" [navPush]="paginaSesiones">
-        <ion-icon name="md-document"></ion-icon>
-      </button>
-      <button ion-button color="secondary" [navPush]="paginaSesiones">
-        <ion-icon name="md-eye"></ion-icon>
-      </button>
-    </ion-item-options>
-  </ion-item-sliding>
-  
-</ion-list>
+    <ion-item-sliding  *ngFor="let ficha of fichas | async">
+      <ion-item>
+        <h2>{{ ficha.motivoPrincipal }}</h2>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="primary" 
+          [navPush]="paginaSesiones" 
+          [navParams] = "{ 'pacienteClave': pacienteClave, 'fichaClave': ficha.clave , 'fichaMotivo': ficha.motivoPrincipal }">
+          <ion-icon name="md-document"></ion-icon>
+        </button>
+        <button ion-button color="secondary" 
+          [navPush]="paginaVerFicha"
+          [navParams]="{ 'pacienteClave': pacienteClave, 'ficha': ficha }">
+          <ion-icon name="md-eye"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 
 </ion-content>

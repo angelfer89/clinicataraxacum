@@ -8,11 +8,55 @@
 
   <ion-navbar>
     <ion-title>VerSesion</ion-title>
+    <ion-buttons end>
+      <button ion-button (click) = "editar = !editar">
+        Editar
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <form  (ngSubmit)="ModificarSesion()">
+      <ion-item>
+        <ion-label floating>Fecha de la sesión</ion-label>
+        <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="sesion.fechaActual" name="fechaActual">
+          {{ sesion.fechaActual }}
+        </ion-datetime>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Sesión</ion-label>
+        <ion-input type="text" [(ngModel)]="sesion.sesion" name="sesion" [readonly] = "!editar">
+          {{ sesion.sesion }}
+        </ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Sugerencias</ion-label>
+        <ion-input type="text" [(ngModel)]="sesion.sugerencias" name="sugerencias" [readonly] = "!editar">
+          {{ sesion.sugerencias }}
+        </ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Tratamiento</ion-label>
+        <ion-input type="text" [(ngModel)]="sesion.tratamiento" name="tratamiento" [readonly] = "!editar">
+          {{ sesion.tratamiento }}
+        </ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Datos de importancia</ion-label>
+        <ion-input type="text" [(ngModel)]="sesion.datosImportancia" name="datosImportancia" [readonly] = "!editar">
+          {{ sesion.datosImportancia }}
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Fecha de la sesión siguiente</ion-label>
+        <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="sesion.fechaSiguiente" name="fechaSiguiente">
+          {{ sesion.fechaSiguiente }}
+        </ion-datetime>
+      </ion-item>
+      <button ion-button *ngIf="editar" type="submit" block>Modificar</button>
+    </form>
 
 </ion-content>

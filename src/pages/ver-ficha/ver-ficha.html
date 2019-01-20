@@ -8,11 +8,96 @@
 
   <ion-navbar>
     <ion-title>VerFicha</ion-title>
+    <ion-buttons end>
+      <button ion-button (click) = "editar = !editar">
+        Editar
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <form (ngSubmit)="ModificarFicha()">
+      <ion-item>
+        <ion-label floating>Motivo principal</ion-label>
+        <ion-input type="text" [(ngModel)]="ficha.motivoPrincipal" name="motivoPrincipal" [readonly] = "!editar">
+          {{ ficha.motivoPrincipal }}
+        </ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>¿Desde cuando la presenta?</ion-label>
+        <ion-input type="text" [(ngModel)]="ficha.desdeCuando" name="desdeCuando" [readonly] = "!editar">
+          {{ ficha.desdeCuando }}
+        </ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>¿A qué lo atribuye?</ion-label>
+        <ion-input type="text" [(ngModel)]="ficha.atribuyeA" name="atribuyeA" [readonly] = "!editar">
+          {{ ficha.atribuyeA }}
+        </ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Indicar síntomas físicos</ion-label>
+        <ion-input type="text" [(ngModel)]="ficha.sintomasFisicos" name="sintomasFisicos" [readonly] = "!editar">
+          {{ ficha.sintomasFisicos }}
+        </ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Indicar síntomas mentales</ion-label>
+        <ion-input type="text" [(ngModel)]="ficha.sintomasMentales" name="sintomasMentales" [readonly] = "!editar">
+          {{ ficha.sintomasMentales }}
+        </ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Indicar si hay patologías asociadas al problema actual y cuales</ion-label>
+        <ion-input type="text" [(ngModel)]="ficha.patologiasAsociadas" name="patologiasAsociada" [readonly] = "!editar">
+          {{ ficha.patologiasAsociadas }}
+        </ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Indicar intervenciones quirúrgicas</ion-label>
+        <ion-input type="text" [(ngModel)]="ficha.intervencionesQuirurgicas" name="intervencionesQuirurgicas" [readonly] = "!editar">
+          {{ ficha.intervencionesQuirurgicas }}
+        </ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Mencionar el tratamiento convencional que está recibiendo</ion-label>
+        <ion-input type="text" [(ngModel)]="ficha.tratamientoConvencional" name="tratamientoConvencional" [readonly] = "!editar">
+          {{ ficha.tratamientoConvencional }}
+        </ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Mencionar si está recibiendo algún tratamiento natural o alternativo</ion-label>
+        <ion-input type="text" [(ngModel)]="ficha.tratamientoAlternativo" name="tratamientoAlternativo" [readonly] = "!editar">
+          {{ ficha.tratamientoAlternativo }}
+        </ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Alergias. Consumo de tóxicos (tabaco, alcohol...)</ion-label>
+        <ion-input type="text" [(ngModel)]="ficha.alergiasConsumos" name="alergiasConsumos" [readonly] = "!editar">
+          {{ ficha.alergiasConsumos }}
+        </ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Antecedentes de la familia relacionadas con el motivo principal</ion-label>
+        <ion-input type="text" [(ngModel)]="ficha.antecedentesFamiliaresRelacionados" name="antecedentesFamiliaresRelacionados" [readonly] = "!editar">
+          {{ ficha.antecedentesFamiliaresRelacionados }}
+        </ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Otros antecedemtes familiares de salud que considere importantes </ion-label>
+        <ion-input type="text" [(ngModel)]="ficha.antecedentesFamiliaresSalud" name="antecedentesFamiliaresSalud" [readonly] = "!editar">
+          {{ ficha.antecedentesFamiliaresSalud }}
+        </ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label floating>Otros de importancia (sueños...)</ion-label>
+        <ion-input type="text" [(ngModel)]="ficha.anteceentesFamiliaresOtros" name="anteceentesFamiliaresOtros" [readonly] = "!editar">
+          {{ ficha.anteceentesFamiliaresOtros }}
+        </ion-input>
+      </ion-item>
+      <button ion-button *ngIf="editar" type="submit" block>Modificar</button>
+    </form>
 </ion-content>
