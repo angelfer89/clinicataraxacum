@@ -8,31 +8,31 @@
 
 
 <ion-content padding>
-  <form (ngSubmit)="AgregarSesion()">
+  <form [formGroup]="sesionForm" (ngSubmit)="AgregarSesion()">
       <ion-item>
         <ion-label floating>Fecha de la sesión</ion-label>
-        <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="sesion.fechaActual" name="fechaActual"></ion-datetime>
+        <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="sesion.fechaActual" formControlName="fechaActual"></ion-datetime>
       </ion-item>
       <ion-item>
          <ion-label floating>Sesión</ion-label>
-        <ion-input type="text" [(ngModel)]="sesion.sesion" name="sesion"></ion-input>
+        <ion-input type="text" [(ngModel)]="sesion.sesion" formControlName="sesion"></ion-input>
       </ion-item>
       <ion-item>
          <ion-label floating>Sugerencias</ion-label>
-        <ion-input type="text" [(ngModel)]="sesion.sugerencias" name="sugerencias"></ion-input>
+        <ion-input type="text" [(ngModel)]="sesion.sugerencias" formControlName="sugerencias"></ion-input>
       </ion-item>
       <ion-item>
          <ion-label floating>Tratamiento</ion-label>
-        <ion-input type="text" [(ngModel)]="sesion.tratamiento" name="tratamiento"></ion-input>
+        <ion-input type="text" [(ngModel)]="sesion.tratamiento" formControlName="tratamiento"></ion-input>
       </ion-item>
       <ion-item>
          <ion-label floating>Datos de importancia</ion-label>
-        <ion-input type="text" [(ngModel)]="sesion.datosImportancia" name="datosImportancia"></ion-input>
+        <ion-input type="text" [(ngModel)]="sesion.datosImportancia" formControlName="datosImportancia"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label floating>Fecha de la sesión siguiente</ion-label>
-        <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="sesion.fechaSiguiente" name="fechaSiguiente"></ion-datetime>
+        <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="sesion.fechaSiguiente" formControlName="fechaSiguiente"></ion-datetime>
       </ion-item>
-      <button ion-button type="submit" block>Agregar</button>
+      <button ion-button type="submit" block [disabled]="!sesionForm.valid">Agregar</button>
     </form>
 </ion-content>

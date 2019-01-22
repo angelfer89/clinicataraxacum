@@ -12,8 +12,8 @@ export class VerSesionPage {
   editar:boolean = false;
   pacienteClave:string = "";
   fichaClave:string = "";
-  
-  constructor(public navCtrl: NavController, 
+
+  constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private alertCtrl: AlertController,
               private loadingCtrl: LoadingController,
@@ -22,7 +22,7 @@ export class VerSesionPage {
      this.fichaClave = this.navParams.get('fichaClave');
      this.sesion = this.navParams.get('sesion');
   }
-  
+
   ModificarSesion() {
     this.GuardarSesion();
     let loading = this.loadingCtrl.create({
@@ -41,21 +41,21 @@ export class VerSesionPage {
       }, 2000 );
 
     });
-    
+
     this.navCtrl.pop();
 
     return promesa;
   }
-  
-    
+
+
   /* Guardará la sesión en la base de datos de Firebase */
-  
+
   GuardarSesion()
   {
      let path = "pacientes/" + this.pacienteClave + "/fichas/" + this.fichaClave;
      const sesionesCollection = this.afs.doc(path).collection('sesiones');
-     sesionesCollection.doc(this.sesion.clave).update({ 
-       clave: this.sesion.clave, 
+     sesionesCollection.doc(this.sesion.clave).update({
+       clave: this.sesion.clave,
        fechaActual: this.sesion.fechaActual,
        sesion: this.sesion.sesion,
        sugerencias: this.sesion.sugerencias,
