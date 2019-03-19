@@ -20,7 +20,7 @@ export class AgregarPacientePage {
               private formBuilder: FormBuilder) {
 
       this.pacienteForm = this.formBuilder.group({
-        fechaActual: ['', Validators.required],
+        nombre: ['', Validators.required],
         fechaNacimiento: ['', Validators.required],
         lugarNacimiento: ['', Validators.required],
         edad: ['', Validators.required],

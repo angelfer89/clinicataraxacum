@@ -1,5 +1,7 @@
 {
   "name": "ClinicaTaraxacum",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

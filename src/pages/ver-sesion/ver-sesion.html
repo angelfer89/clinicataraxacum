@@ -28,27 +28,27 @@
       </ion-item>
       <ion-item>
          <ion-label floating>Sesión</ion-label>
-        <ion-input type="text" [(ngModel)]="sesion.sesion" name="sesion" [readonly] = "!editar">
+        <ion-textarea rows="6" [(ngModel)]="sesion.sesion" name="sesion" [readonly] = "!editar">
           {{ sesion.sesion }}
-        </ion-input>
+        </ion-textarea>
       </ion-item>
       <ion-item>
          <ion-label floating>Sugerencias</ion-label>
-        <ion-input type="text" [(ngModel)]="sesion.sugerencias" name="sugerencias" [readonly] = "!editar">
+        <ion-textarea rows="6" [(ngModel)]="sesion.sugerencias" name="sugerencias" [readonly] = "!editar">
           {{ sesion.sugerencias }}
-        </ion-input>
+        </ion-textarea>
       </ion-item>
       <ion-item>
          <ion-label floating>Tratamiento</ion-label>
-        <ion-input type="text" [(ngModel)]="sesion.tratamiento" name="tratamiento" [readonly] = "!editar">
+        <ion-textarea rows="6" [(ngModel)]="sesion.tratamiento" name="tratamiento" [readonly] = "!editar">
           {{ sesion.tratamiento }}
-        </ion-input>
+        </ion-textarea>
       </ion-item>
       <ion-item>
          <ion-label floating>Datos de importancia</ion-label>
-        <ion-input type="text" [(ngModel)]="sesion.datosImportancia" name="datosImportancia" [readonly] = "!editar">
+        <ion-textarea rows="6" [(ngModel)]="sesion.datosImportancia" name="datosImportancia" [readonly] = "!editar">
           {{ sesion.datosImportancia }}
-        </ion-input>
+        </ion-textarea>
       </ion-item>
       <ion-item>
         <ion-label floating>Fecha de la sesión siguiente</ion-label>
